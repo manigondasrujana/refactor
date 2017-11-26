@@ -1,8 +1,8 @@
 <?php
 interface model
 {
-public fuction save();
-public function delete();
+    public function save();
+    public function delete();
 }
 final class account extends activerecord\model {
  public $id;
@@ -17,4 +17,5 @@ final class account extends activerecord\model {
         $tableName='accounts';
         return $tableName;
    }
+}
 ?>
