@@ -6,19 +6,18 @@ abstract class model {
 	    {
 	if ($this->id != '') {
 	$sql = $this->update($this->id);
- $db = dbConn::getConnection();
- $statement = $db->prepare($sql);
+ //$db = dbConn::getConnection();
+ //$statement = $db->prepare($sql);
 	        } else {
 		            $sql = $this->insert();
 	 }
-//	$db = dbConn::getConnection();
-  //      $statement = $db->prepare($sql);
-  $array = get_object_vars($this);
-                foreach (array_flip($array) as $record=>$item){
+$db = dbConn::getConnection();
+        $statement = $db->prepare($sql);
+  //$array = get_object_vars($this);
+              //  foreach (array_flip($array) as $=>$item){
                 
-            $statement->bindParam(":$item", $this->$item);
-            $statement->execute();
-        }
+           // $statement->bindParam(":$item", $this->$item);
+       // }
         
        // $statement->execute();
         //$tableName = get_called_class();
@@ -35,10 +34,14 @@ abstract class model {
         $array = get_object_vars($this);
         $columnString = implode(',', array_flip($array));
         $valueString = ':'.implode(',:', array_flip($array));
+        //echo $valueString;
         print_r($columnString);
-        $sql =  'INSERT INTO '.$tableName.' ('.$columnString.') VALUES ('.$valueString.')';
+        //$sql =  'INSERT INTO '.$tableName.' ('.$columnString.') VALUES ('.$valueString.')';
+        $sql =  'INSERT INTO '.$tableName.' ('.$columnString.') VALUES (1000,"msruj@gmail.com","abc","xyz",456,"abc","M","Test")';
+        //echo $sql;
         return $sql;
-               
+        
+                     
      		echo '<hr/>';
         
 	    }
