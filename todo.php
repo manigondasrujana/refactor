@@ -11,4 +11,5 @@ final class todo extends activerecord\model {
         $tableName='todos';
         return $tableName;
    }
+   }
 ?>
