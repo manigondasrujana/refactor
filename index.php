@@ -17,10 +17,28 @@ include "todo.php";
 include 'accounts.php';
 include "htmlTable.php";
 
-echo "<h1><u> This is PHP ActiveRecord Assignment </u></h1>";
+echo "<h2>Select all records from accounts </h2>";
 $obj = new Account;
 $obj->save();
 $obj =  accounts::create();
 $result = $obj -> findAll();
 htmlTable::createTable($result);
+
+echo "<h2> Select all Records from todos</h2>";
+$obj = new todo;
+$obj->save();
+$obj =  todos::create();
+$result = $obj -> findAll();
+htmlTable::createTable1($result);
+
+echo "<h2> Select one record from accounts where id=3</h2>";
+$obj =  accounts::create();
+$result = $obj -> findOne(3);
+htmlTable::createTable($result);
+
+echo "<h2> Select one record from todos where id=3</h2>";
+$obj =  todos::create();
+$result = $obj -> findOne(3);
+htmlTable::createTable($result);
+
 ?>
