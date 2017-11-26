@@ -1,5 +1,5 @@
 <?php
 final class accounts extends activerecord\collection {
-    protected static $modelName = 'account';
-    }
+protected static $modelName = 'accounts';
+}
 ?>
