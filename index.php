@@ -48,13 +48,6 @@ $obj =  accounts::create();
 $result = $obj -> findAll();
 htmlTable::createTable($result);
 
-/*echo "<h2> newly inserted record in accounts with id=1000</h2>";
-$obj = new todo;
-$obj->save();
-$obj =  todos::create();
-//$result = $obj -> findAll();
-//htmlTable::createTable($result);
-*/
 echo "<h2> update fname=kanduru where id=3 in accounts</h2>";
 $record = new account;
 $record->id=3;
@@ -62,6 +55,16 @@ $record->updateRecord();
 $result = $obj -> findAll();
 htmlTable::createTable($result);
 
+echo "<h2> delete record from accounts where id=6</h2>";
+$record = new account;
 $record->delete(6);
+$result = $obj -> findAll();
+htmlTable::createTable($result);
 
+echo "<h2> delete record from todos where id=3</h2>";
+$obj = new todo;
+$obj->delete(3);
+$obj =  todos::create();
+$result = $obj -> findAll();
+htmlTable::createTable1($result);
 ?>
