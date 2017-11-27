@@ -9,6 +9,7 @@ final class todo extends activerecord\model {
 			    public $isdone;
                       public static function tname(){
         $tableName='todos';
+        
         return $tableName;
    }
    }
