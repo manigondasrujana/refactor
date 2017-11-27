@@ -42,24 +42,26 @@ $result = $obj -> findOne(3);
 htmlTable::createTable($result);
 
 echo "<h2> newly inserted record in accounts with id=1000</h2>";
-$record = new account();
 $obj = new Account;
-//$obj->save();
+$obj->save();
 $obj =  accounts::create();
 $result = $obj -> findAll();
 htmlTable::createTable($result);
-$record->id="";
 
-
-
-/*$record->email="msrujana@gmail.com";
-$record->fname="kanduru";
-$record->lname="ramesh";
-$record->phone=123456789;
-$record->birthday="2001-08-08";
-$record->gender="male";
-$record->password="1234";
+/*echo "<h2> newly inserted record in accounts with id=1000</h2>";
+$obj = new todo;
+$obj->save();
+$obj =  todos::create();
+//$result = $obj -> findAll();
+//htmlTable::createTable($result);
 */
-//$record->save();
+echo "<h2> update fname=kanduru where id=3 in accounts</h2>";
+$record = new account;
+$record->id=3;
+$record->updateRecord();
+$result = $obj -> findAll();
+htmlTable::createTable($result);
+
+$record->delete(6);
 
 ?>
